@@ -40,9 +40,14 @@
     "preandroid": "node scripts/prepare-history.mjs",
     "preweb": "node scripts/prepare-history.mjs",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test tests/history.test.ts",
+    "test": "tsx --test tests/history.test.ts && node --test tests/fingerprint.test.mjs",
     "import-history": "tsx scripts/import-history.ts",
     "lint": "eslint App.tsx src scripts tests"
   },
-  "private": true
+  "private": true,
+  "overrides": {
+    "@expo/fingerprint": {
+      "minimatch": "11.0.9"
+    }
+  }
 }

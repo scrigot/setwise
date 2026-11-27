@@ -27,5 +27,7 @@ jobs:
       - run: node --test tests/test_frontend.mjs tests/test_nutrition_frontend.mjs tests/test_tracking_frontend.mjs
       - run: npm ci
         working-directory: mobile
+      - run: npm audit --audit-level=moderate
+        working-directory: mobile
       - run: npm run typecheck && npm run lint && npm test
         working-directory: mobile

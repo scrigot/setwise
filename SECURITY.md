@@ -18,6 +18,8 @@ Expo `EXPO_PUBLIC_*` values are embedded in app bundles; they are not secrets. K
 
 Use this repository's **Security → Report a vulnerability** for private reporting. Do not post credentials, personal journals, or exploitable private deployment details in a public issue. Include reproduction steps using synthetic data, the affected commit, and the expected boundary. There is no guaranteed response time or formal security audit claim.
 
-## Known dependency finding (November 26, 2026)
+## Dependency remediation (November 26, 2026)
 
-A clean mobile install's `npm audit` reported a moderate minimatch denial-of-service advisory ([GHSA-g3hv-75wg-m249](https://github.com/advisories/GHSA-g3hv-75wg-m249)) through Expo's fingerprint build tooling. npm counts the vulnerable package and two parent packages as three findings. The suggested automatic fix downgrades Expo to a different major version; that migration has not been applied or validated. This is an outstanding dependency finding, not evidence of leaked journal data. Run `npm audit` to check the current dependency state before building with untrusted inputs.
+The minimatch denial-of-service advisory [GHSA-g3hv-75wg-m249](https://github.com/advisories/GHSA-g3hv-75wg-m249) is resolved by an npm override scoped to `@expo/fingerprint`, pinning its `minimatch` dependency to **11.0.9**. Expo remains on SDK 58. The lockfile contains the patched version, and `npm ci` / `npm audit` reported zero known vulnerabilities at verification time.
+
+The mobile test suite exercises real Expo fingerprint generation, including ignored-file stability and changes to explicitly included files, to check compatibility with this override. CI runs `npm audit --audit-level=moderate` to catch future reported findings. Remove the override when Expo's fingerprint dependency supports a patched version directly, then rerun the audit and compatibility checks. A clean dependency audit does not replace a full application security review.
