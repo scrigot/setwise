@@ -1,0 +1,11 @@
+[Unit]
+Description=Private Setwise mobile history reader
+After=setwise-web.service
+[Service]
+EnvironmentFile=%h/.config/setwise/history.env
+ExecStart=/usr/bin/python3 %h/.local/share/setwise/mobile-history/history.py
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+[Install]
+WantedBy=default.target

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#171c33">
+  <meta name="description" content="A private, local-first workout journal. Log the work. See your progress.">
+  <title>Setwise · Your workout, in motion</title>
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="/static/tracking.js" defer></script>
+  <script src="/static/nutrition.js" defer></script>
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to workout</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="App navigation">
+      <a class="brand" href="#today" aria-label="Setwise home"><span class="brand-mark" aria-hidden="true">s<span>•</span></span><span>setwise<span class="brand-caption">A LITTLE STRONGER</span></span></a>
+      <nav id="desktop-nav" class="desktop-nav"></nav>
+      <div class="sidebar-bottom"><span class="local-dot"></span> Your space. Your progress.<p>Stored on your local server<br>No accounts. No distractions.</p><span class="version">OPEN-SOURCE MVP · v0.1</span></div>
+    </aside>
+    <div class="page-shell">
+      <header class="topbar"><a class="mobile-brand" href="#today">setwise<span>•</span></a><span class="topbar-label">WORKOUT JOURNAL</span><div id="connection" class="connection" aria-live="polite"><span class="status-dot"></span><span>Connecting</span></div></header>
+      <main id="main" tabindex="-1"></main>
+      <footer class="page-footer">Built for the work you put in.<span>Keep a backup with Export.</span><span id="single-tab-note" hidden>Use one logging tab to keep pending sets in sync.</span></footer>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="App navigation"></nav>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <dialog id="dialog" aria-labelledby="dialog-title"></dialog>
+</body>
+</html>

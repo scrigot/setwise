@@ -1,0 +1,44 @@
+.venv/
+__pycache__/
+*.py[cod]
+data/
+*.sqlite3*
+.env
+.env.*
+artifacts/
+*.zip
+.gstack/
+
+# Private data, exports, local tooling, and generated output
+node_modules/
+.expo/
+dist/
+web-build/
+site/
+.DS_Store
+.21st/
+.claude/
+.codex/
+AGENTS.md
+*.db
+*.db-*
+*.sqlite*
+*.private.*
+*.csv
+*.log
+*.pem
+*.key
+*.p12
+*.p8
+*.jks
+*.mobileprovision
+*.tar
+*.gz
+*.bak
+*.backup
+coverage/
+.pytest_cache/
+# Examples must contain placeholders only
+!.env.example
+# Local browser acceptance script contains personal workout expectations
+/mobile/scripts/check-ui.mjs

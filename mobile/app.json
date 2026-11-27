@@ -1,0 +1,24 @@
+{
+  "expo": {
+    "name": "Setwise",
+    "slug": "setwise",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "scheme": "setwise",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.setwise.history"
+    },
+    "android": {
+      "package": "com.setwise.history",
+      "predictiveBackGestureEnabled": true
+    },
+    "plugins": [
+      "expo-font",
+      "expo-router",
+      "./plugins/with-history-network.cjs"
+    ],
+    "backgroundColor": "#121212"
+  }
+}
